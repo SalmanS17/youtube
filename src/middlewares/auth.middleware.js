@@ -28,7 +28,7 @@
 
 // export {verifyJwt}
 
-import { asyncHandler } from "../utils/asynHandler.js"
+import { asyncHandler } from "../utils/asyncHandler.js"
 import { apiError } from "../utils/apiError.js"
 import jwt from "jsonwebtoken"
 import { User } from "../models/user.model.js"

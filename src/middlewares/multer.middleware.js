@@ -8,7 +8,15 @@ const storage = multer.diskStorage({
       cb(null, file.originalname)
     }
   })
+  const fileFilter = (req, file, cb) => {
+    const allowedMimeTypes = ["video/mp4", "video/mkv", "video/webm"];
+    if (allowedMimeTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(new Error("Invalid file type. Only MP4, MKV, and WEBM allowed."), false);
+    }
+};
     
  export const upload = multer({
-     storage, 
+     storage, fileFilter
  })

@@ -13,7 +13,6 @@ import {
     updateUserCoverImage,
     getUserChannelProfile,
     getWatchHistory
-
     } from "../controllers/user.Controller.js"
 
 
@@ -32,8 +31,6 @@ router.route("/register").post(
 )
 
 router.route("/login").post(loginUser)
-
-// Secured routes
 
 router.route("/logout").post(verifyJwt, logoutUser)
 

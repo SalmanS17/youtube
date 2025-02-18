@@ -16,10 +16,17 @@ app.use(cookieParser())
 
 // importing routes
 import userRoutes from "./routes/user.Routes.js"
+import videoRoutes from "./routes/video.Routes.js"
+import commentRoutes from "./routes/comment.Routes.js"
+import createPlaylist from "./routes/playlist.Routes.js"
+import toggleVideoLike from "./routes/like.Routes.js"
 
 // Routes Declaration
 
 app.use("/api/v1/users", userRoutes)
-
+app.use("/api/v1/videos", videoRoutes)
+app.use("/api/v1/comments", commentRoutes)
+app.use("/api/v1/playlist", createPlaylist)
+app.use("/api/v1/like", toggleVideoLike)
 
 export default app;
